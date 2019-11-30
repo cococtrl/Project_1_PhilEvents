@@ -1,0 +1,55 @@
+/* colors: #A24936
+        #D23135
+        #282B28
+        #82BCA9
+        #636B61 */
+
+
+* {
+
+}
+/* navbar */
+#nav {
+    overflow: hidden;
+    background-color: #282B28;
+  }
+
+  #nav a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+#home{
+      float: left;
+  }
+
+#genre {
+    float: right;
+}
+
+.test {
+    height: 1000px;
+    background-color: white;
+}
+  .column {
+    float: left;
+    width: 50%;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .content {
+ 
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .sticky + .content {
+    
+  }
