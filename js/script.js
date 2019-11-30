@@ -8,17 +8,16 @@ let submit = document.querySelector('button').addEventListener('click', eventRes
 function eventResults(){
     console.log(input.value)
     console.log(today)
+    validDate();
 };
-
-let today = new Date();
-
+// let today = new Date();
+let date = new Date();
+let today = date.getFullYear()+'-'+(((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))))+'-'+((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate()));
 
 function validDate(input){
-    console.log(input)
-    console.log(today)
-    // if(input >= date){
-    //     console.log('valid')
-    // } else {console.log("not valid")}
+    if(input >= today){
+        console.log('valid')
+    } else {console.log("not valid")}
 };
 //function - when submit button is clicked, find events function is triggered
 // function that decides if that click is valid
