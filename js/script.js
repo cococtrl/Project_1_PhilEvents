@@ -17,8 +17,7 @@ error: function (error){
 
 //function that prefilters events to philadelphia
 
-
-
+//function that resets page when home is clicked
 
 
 
