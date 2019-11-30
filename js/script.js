@@ -14,8 +14,8 @@ function eventResults(){
 let date = new Date();
 let today = date.getFullYear()+'-'+(((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))))+'-'+((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate()));
 
-function validDate(input){
-    if(input >= today){
+function validDate(){
+    if(input.value >= today){
         console.log('valid')
     } else {console.log("not valid")}
 };
