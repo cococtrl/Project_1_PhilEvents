@@ -1,13 +1,27 @@
 //API info
 const promise = $.ajax({url:'https://app.ticketmaster.com/discovery/v2/events.json?apikey=RCh1xsSADGGECDgRe6Ff55bjS3Ab8qgM',
-success: function(eventData) {
-    console.log(eventData);
-},
-error: function (error){
-    console.log('bad request: ', error);
-}
 });
+let input = document.getElementById("eventDate");
+let submit = document.querySelector('button').addEventListener('click', eventResults);
+
+
+function eventResults(){
+    console.log(input.value)
+    console.log(today)
+};
+
+let today = new Date();
+
+
+function validDate(input){
+    console.log(input)
+    console.log(today)
+    // if(input >= date){
+    //     console.log('valid')
+    // } else {console.log("not valid")}
+};
 //function - when submit button is clicked, find events function is triggered
+// function that decides if that click is valid
 
 //function that finds events on that specific date
     //call function that prefilters to philadelphia
