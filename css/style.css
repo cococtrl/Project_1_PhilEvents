@@ -24,10 +24,11 @@
 
 
 /* page content - event list */
-.eventResults {
+#results {
     display: block;
     align-content: center;
-
+    color: black;
+    background-color: blue;
 }
 
 
