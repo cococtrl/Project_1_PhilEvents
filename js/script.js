@@ -5,11 +5,6 @@ let eventList = document.getElementById('results');
 let date = new Date();
 let today = date.getFullYear()+'-'+(((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))))+'-'+((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate()));
 
-function eventResults(){
-    event.preventDefault;
-    validDate();
-};
-
 function validDate(){
     if(input.value >= today){
         console.log(input.value)
@@ -17,6 +12,10 @@ function validDate(){
         alert("Date is not valid. Please select a valid date.")}
 };
 
+function eventResults(){
+    event.preventDefault;
+    validDate();
+};
 //API info
 $.ajax({
     type:"GET",
@@ -28,22 +27,15 @@ $.ajax({
     error: function(xhr, status, err) {
              }
   }).then(
-      function findEvents(data){
-        let eventArray = data._embedded.events
+    function findEvents(data){
+        let eventArray = data._embedded.events[i].name
         let newEventArray = []
-        console.log(eventArray[2])
-        for(i=0, i < eventArray.length; i++){
-            if(eventArray[i].dates.start.localDate == input.value){
-          newEventArray.push(i);
-        eventList.innerHTML = (newEventArray);
-      }
-        //   console.log(data._embedded.events);
-          // eventList.innerHTML = (newEventArray);
+        for(i=0;i < eventArray.length; i++)
+        newEventArray.push(i) +=
+        console.log(newEventArray)
+        eventList.innerHTML = eventArray;
         }
   );
-
-  //create array to push onto page
-  //create four loop to itirate through events on date 
 
 //function that resets page when home is clicked
 
