@@ -1,53 +1,74 @@
-/* colors: #A24936
-        #D23135
-        #282B28
-        #82BCA9
-        #636B61 */
-
-/* navbar */
-#nav {
-    overflow: hidden;
-    background-color: #282B28;
+/* colors: #A24936 less orange
+        #D23135 orange
+        #282B28 green
+        #82BCA9 teal
+        #636B61 less green */
+/* fonts: font-family: 'Bebas Neue', cursive;
+font-family: 'Playfair Display', serif; */
+* {
+    background-image: url("https://imgur.com/rHtIA1C");
   }
-
-#nav a {
-    display: block;
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
+  /* navbar */
+  #nav {
+      overflow: hidden;
+      background-color: #282B28;
+      font-size: 50px;
+    text-shadow: 1px 1px 1px #82BCA9;
     }
-/* search dates */
-.search {
-    text-align: center;}
-
-
-/* page content - event list */
-#results {
-    display: block;
-    align-content: center;
-    color: black;
-    background-color: blue;
-}
-
-
-  /* .column {
-    float: left;
-    width: 50%;
+  
+  #nav a {
+      display: block;
+      float: left;
+      color: #636B61;
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+      font-family: 'Bebas Neue', cursive;
+      letter-spacing: 2px;
+      text-decoration: underline;
+      text-decoration-color: #82BCA9;
+      }
+  /* search dates */
+  .search {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
   }
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  } */
-
-/* sticky nav */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
+  #button{
+    font-family: 'Playfair Display', serif;
   }
-  .sticky + .content {
-    
+  #events {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: 2px 1px 1px #82BCA9;
   }
+  /* page content - event list */
+  #results {
+      display: block;
+      align-content: center;
+      color: black;
+      background-color: #A24936;
+     font-family: 'Playfair Display', serif;
+  }
+  
+  
+    /* .column {
+      float: left;
+      width: 50%;
+    }
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    } */
+  
+  /* sticky nav */
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    .sticky + .content {
+      
+    }

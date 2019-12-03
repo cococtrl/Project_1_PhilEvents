@@ -7,11 +7,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script defer src="./js/script.js"></script>
     <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Playfair+Display&display=swap" rel="stylesheet">
     <title>Project 1</title>
 </head>
 <body>
     <div id="nav">
-        <a id="home" href="#Home">Home</a>
+        <a id="home" href="#Home">Philly Events</a>
         <!-- <a id="genre" href="#Genre">Genre</a>
         <a id="genre" href="#Genre2">Genre 2</a>
         <a id="genre" href="#Genre3">Genre 3</a> -->
@@ -21,9 +22,12 @@
             Enter date:
             <input type="date" id="eventDate">
         </label>
-            <button>Submit</button>
+            <button id="button">Submit</button>
     </form>
-    <div id="results"></div>
+    <dl>
+        <dt id="events">Events</dt>
+        <dd id="results"></dd>
+    </dl>
 <!-- have events show up in columns - might be easier way to rework so they automatically take up two columns worth of space
   <div class="row">
         <div class="column">events</div>
@@ -31,4 +35,5 @@
 </div> -->
 </body>
 </html>
+
 
