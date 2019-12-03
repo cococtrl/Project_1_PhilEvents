@@ -28,12 +28,17 @@ $.ajax({
              }
   }).then(
     function findEvents(data){
-        let eventArray = data._embedded.events[i].name
-        let newEventArray = []
-        for(i=0;i < eventArray.length; i++)
-        newEventArray.push(i) +=
-        console.log(newEventArray)
-        eventList.innerHTML = eventArray;
+        let eventArray = [data._embedded.events[0].name,
+                        data._embedded.events[0].dates.start.localDate,
+                        data._embedded.events[0].url,]
+        for(i=0; i<eventArray.length;i++){
+            eventList.innerHTML = eventArray[i] + '<br/>'
+        }
+        // let newEventArray = []
+        // for(i=0;i < eventArray.length; i++)
+        // newEventArray.push(i) +=
+        console.log(data._embedded.events[0])
+        // eventList.innerHTML = eventArray;
         }
   );
 
