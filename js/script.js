@@ -14,36 +14,40 @@ function validDate(){
         alert("Date is not valid. Please select a valid date.")}
 };
 
-function eventResults(){
-    event.preventDefault;
+function eventResults(event){
+    event.preventDefault();
     validDate();
-};
+    
 //API info
+// startDateTime=2019-12-12T00:00:00Z&endDateTime=2019-12-14T00:00:00Z&
 $.ajax({
     type:"GET",
-    url:'https://app.ticketmaster.com/discovery/v2/events.json?size=100&city=philadelphia&apikey=RCh1xsSADGGECDgRe6Ff55bjS3Ab8qgM',
+    url:`https://app.ticketmaster.com/discovery/v2/events.json?size=200&city=philadelphia&apikey=RCh1xsSADGGECDgRe6Ff55bjS3Ab8qgM`,
     dataType: "json",
-    success: function(json) {
-                console.log(json);
-             },
-    error: function(xhr, status, err) {
-             }
   }).then(
     function findEvents(data){
         // let currentUrl= data._embedded.events[0].url
-        let eventArray = [data._embedded.events[0].name + '</br>',           
-                          data._embedded.events[0].dates.start.localDate + '</br>']
         let newEventArray = []
-        for(i=0;i < 100; i++) {
-        if(data._embedded.events[i] == input.value) {
-            $(eventList).append(`${data._embedded.events[i]}`)
-        } else {console.log("error")}
-        newEventArray.push(data._embedded.events[i])
-        console.log(data._embedded.events[0]) };
+        for(i=0;i < 200; i++) {
+            // console.log(input.value)
+            console.log(data._embedded.events[i].dates.start.localDate===input.value)
+        if(data._embedded.events[i].dates.start.localDate == input.value) {
+            let eventArray = [data._embedded.events[0].name + '</br>',           
+                            data._embedded.events[0].dates.start.localDate + '</br>'].join("")
+            console.log(data._embedded.events[i])
+            $(eventList).append(eventArray)
+        } else {
+            // message saying there is no matches
+        }
+        // newEventArray.push(data._embedded.events[i])
+        // console.log(data._embedded.events[0])
+     };
         // eventList.innerHTML = eventArray;
-        console.log(newEventArray);
+        // console.log(newEventArray);
         // eventUrl.innerHTML = currentUrl;
         });
+    };
+
 //function that resets page when home is clicked
 
 //Sticky nav functions
@@ -58,8 +62,3 @@ $.ajax({
 //     navbar.classList.remove("sticky");
 //   }
 // };
-        
-//         var i;
-// for (i = 0; i < eventArray.length; i++) {
-//   text += cars[i] + "<br>";
-// }
