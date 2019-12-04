@@ -47,40 +47,33 @@ body {
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 3px;
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
     text-shadow: 2px 1px 1px #82BCA9;
   }
   /* page content - event list */
+/* #toggleEl {
+    display: none;
+} */
   #results {
       display: block;
       align-content: center;
-      color: black;
+      color: white;
       background-color: #A24936, .5;
      font-family: 'Playfair Display', serif;
   }
 #results{
     padding: 10px;
-    background-color: rgba(210,49,53, 0.5);
+    background-color: rgba(210,49,53, 0.4);
     width:400px;
 }
-  
-  
-    /* .column {
-      float: left;
-      width: 50%;
-    }
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    } */
-  
-  /* sticky nav */
-    .sticky {
-      position: fixed;
-      top: 0;
-      width: 100%;
-    }
-    .sticky + .content {
-      
-    }
+#link {
+      display: block;
+      align-content: center;
+      link: white;
+      background-color: #A24936, .5;
+     font-family: 'Playfair Display', serif;
+     padding: 10px;
+     background-color: rgba(210,49,53, 0.4);
+     width:400px;
+  }
+

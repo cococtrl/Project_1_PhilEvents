@@ -1,9 +1,11 @@
 // functions for date
 let input = document.getElementById("eventDate");
-let submit = document.querySelector('button').addEventListener('click', eventResults);
+const submit = document.querySelector('button').addEventListener('click', eventResults);
 let eventList = document.getElementById('results');
+let eventUrl = document.getElementById('link');
 let date = new Date();
 let today = date.getFullYear()+'-'+(((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))))+'-'+((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate()));
+// let toggleEl = getElementById("toggleEl");
 
 function validDate(){
     if(input.value >= today){
@@ -19,7 +21,7 @@ function eventResults(){
 //API info
 $.ajax({
     type:"GET",
-    url:'https://app.ticketmaster.com/discovery/v2/events.json?city=philadelphia&apikey=RCh1xsSADGGECDgRe6Ff55bjS3Ab8qgM',
+    url:'https://app.ticketmaster.com/discovery/v2/events.json?size=100&city=philadelphia&apikey=RCh1xsSADGGECDgRe6Ff55bjS3Ab8qgM',
     dataType: "json",
     success: function(json) {
                 console.log(json);
@@ -28,22 +30,21 @@ $.ajax({
              }
   }).then(
     function findEvents(data){
-        let eventArray = [data._embedded.events[0].name,
-                        data._embedded.events[0].dates.start.localDate,
-                        data._embedded.events[0].url,]
-        for(i=0; i<eventArray.length;i++){
-            eventList.innerHTML = eventArray[i] + '<br/>'
-        }
-        // let newEventArray = []
-        // for(i=0;i < eventArray.length; i++)
-        // newEventArray.push(i) +=
-        console.log(data._embedded.events[0])
+        // let currentUrl= data._embedded.events[0].url
+        let eventArray = [data._embedded.events[0].name + '</br>',           
+                          data._embedded.events[0].dates.start.localDate + '</br>']
+        let newEventArray = []
+        for(i=0;i < 100; i++) {
+        if(data._embedded.events[i] == input.value) {
+            $(eventList).append(`${data._embedded.events[i]}`)
+        } else {console.log("error")}
+        newEventArray.push(data._embedded.events[i])
+        console.log(data._embedded.events[0]) };
         // eventList.innerHTML = eventArray;
-        }
-  );
-
+        console.log(newEventArray);
+        // eventUrl.innerHTML = currentUrl;
+        });
 //function that resets page when home is clicked
-
 
 //Sticky nav functions
 // window.onscroll = function() {stickyScroll()};
