@@ -54,8 +54,8 @@ body {
 /* #toggleEl {
     display: none;
 } */
-  #results {
-      display: block;
+#results {
+      display: none;
       align-content: center;
       color: white;
       background-color: #A24936, .5;
@@ -66,14 +66,4 @@ body {
     background-color: rgba(210,49,53, 0.4);
     width:400px;
 }
-#link {
-      display: block;
-      align-content: center;
-      link: white;
-      background-color: #A24936, .5;
-     font-family: 'Playfair Display', serif;
-     padding: 10px;
-     background-color: rgba(210,49,53, 0.4);
-     width:400px;
-  }
 
